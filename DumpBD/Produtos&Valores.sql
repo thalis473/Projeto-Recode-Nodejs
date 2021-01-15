@@ -16,23 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `comentarios`
---
-
-DROP TABLE IF EXISTS `comentarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `comentarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) NOT NULL,
-  `msg` varchar(500) DEFAULT NULL,
-  `data` datetime DEFAULT current_timestamp(),
-  `numero` int(15) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `produtos`
 --
 
@@ -49,6 +32,16 @@ CREATE TABLE `produtos` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `produtos`
+--
+
+LOCK TABLES `produtos` WRITE;
+/*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
+INSERT INTO `produtos` VALUES (1,'fogao','/produtos_img/fogao.jpg','Fogão 5 Bocas Mueller Decorato Acendimento'),(2,'geladeira','/produtos_img/geladeira.jpg','Geladeira/Refrigerador Brastemp Frost Free Du'),(3,'liquidificador','/produtos_img/liquidificador.jpg','Liquidificador Philco PH900 2L Preto com Filt'),(4,'maquina de lavar','/produtos_img/maquina_de_lavar.jpg','Lavadora de Roupas Electrolux 8.5KG'),(5,'cafeteira','/produtos_img/cafeteira.jpg','Cafeteira Elétrica Britânia CP15 Xícaras'),(6,'ventilador','/produtos_img/ventilador.jpg','Ventilador de Mesa Arno Silence Repelente Líq'),(7,'torradeira','/produtos_img/torradeira.jpg','Torradeira Lenoxx PTR 203 2 Fatias'),(8,'tv','/produtos_img/televisao.jpg','Smart TV LED PRO 43\'\'Full HD LG 43LM 631 3'),(9,'microondas','/produtos_img/microondas.webp','Electrolux MT30S 20'),(10,'impressora','/produtos_img/impressora.webp','Impressora Tanque de Tinta Epson'),(11,'radio','/produtos_img/radio.webp','Radio Britania'),(12,'arcondicionado','/produtos_img/microondas.webp','Ar-Condicionado Split Samsung Digital');
+/*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `valores`
 --
 
@@ -63,6 +56,16 @@ CREATE TABLE `valores` (
   CONSTRAINT `id_valores` FOREIGN KEY (`id_valores`) REFERENCES `produtos` (`id_produtos`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `valores`
+--
+
+LOCK TABLES `valores` WRITE;
+/*!40000 ALTER TABLE `valores` DISABLE KEYS */;
+INSERT INTO `valores` VALUES (1,1559.99,1424.91),(2,2799,2399.1),(3,199,109),(4,1907.12,1273),(5,170,97),(6,389,270),(7,109,69),(8,1875.9,2199.4),(9,430,270),(10,799,478),(11,789,469),(12,2499.4,2100.9);
+/*!40000 ALTER TABLE `valores` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -73,4 +76,4 @@ CREATE TABLE `valores` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-14 23:29:09
+-- Dump completed on 2021-01-15 11:22:10
