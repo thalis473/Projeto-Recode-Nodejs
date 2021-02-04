@@ -9,7 +9,7 @@ class Pagamento extends React.Component{
             <div className="container-fluid text-danger">
                 <h4>Formas de Pagamento</h4>
 
-                <img  className="img-fluid imgpg" src={pagamentos} alt="formas de pagamento"/>
+                <img  className=" imgpg" src={pagamentos} alt="formas de pagamento"/>
             </div>
 
         );   

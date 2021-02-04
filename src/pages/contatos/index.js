@@ -1,13 +1,14 @@
 import React from 'react';
+import {lazy, Suspense} from 'react';
 import Menu from '../../component/menu/menu';
 import Footer from '../../component/footer/footer';
-import Contact from '../../component/contact/contact';
 import Formulario3 from '../../component/form/from3';
 import Emotion from '../../component/form/emotion/emotion';
 import telefonista from '../../assts/banner/telefonista.png';
 
 import './index.css';
 
+const Contact = lazy(()=>import('../../component/contact/contact'))
 
 function Contatos(){
 
@@ -24,7 +25,10 @@ return(
 
         <div className="container">
             <div className="border justify-content-center p-5">
+            <Suspense fallback={<p>carregando..</p>}>
                 <Contact />
+            </Suspense>
+                
             </div>
         </div>
 

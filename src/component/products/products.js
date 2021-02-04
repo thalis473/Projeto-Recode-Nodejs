@@ -14,7 +14,7 @@ class Products extends React.Component{
         this.state={
 
             dados:[],
-            categoria:"", /* o estato da minha categoria da zerado, ou seja esta como dse eu clicasse no button value "todos"*/
+            categoria:"", /* o estado da minha categoria da zerado, ou seja esta como dse eu clicasse no button value "todos"*/
         } 
       this.Categoria = this.Categoria.bind(this); /* bind pra informar meu stats na minha class construtor*/
     }

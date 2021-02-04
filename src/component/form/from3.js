@@ -1,7 +1,8 @@
 import React from 'react';
-import Comentarios from "../comentarios/comentarios";
+import {lazy, Suspense} from 'react';
 
-
+//Code Splitting e Lazy Loading.
+const Comentarios= lazy(()=>import("../comentarios/comentarios"))
 
    export default function Formulario3() {
 
@@ -22,7 +23,7 @@ import Comentarios from "../comentarios/comentarios";
 
         
 // enviando pro back
-       function envio (event){
+      function envio (event){
             event.preventDefault()
             fetch('http://localhost:4000/api/recebimento',{
                 method:"POST",
@@ -30,7 +31,7 @@ import Comentarios from "../comentarios/comentarios";
                     "content-Type":"application/json"},
                 body:JSON.stringify(form) //transforme em json
             }).then((res)=>{
-                setResponse(res)
+                setForm(res)
               console.log(res)
                 setForm({nome:'', msg:''});
             })
@@ -118,8 +119,10 @@ import Comentarios from "../comentarios/comentarios";
             </form>
             <div className="row">
                 <div className="col-lg-12 col-md-12 mx-auto">
-
+                <Suspense fallback={<p>Carregando..</p>}>
                     <Comentarios />
+                </Suspense>
+                    
             
                 </div>
             </div>

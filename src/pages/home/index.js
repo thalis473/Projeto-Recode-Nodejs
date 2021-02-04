@@ -1,13 +1,12 @@
 import React from 'react';
+import {lazy,Suspense} from 'react'
 import Menu from '../../component/menu/menu';
 import Footer from '../../component/footer/footer';
 import Banner from '../../component/banner/banner';
-import ProdutosHome from '../../component/produtosHome/produtosHome';
 import Pagamento from '../../component/pagamento/pagamento';
 
-
-
-
+//Code Splitting e Lazy Loading.
+const ProdutosHome =lazy(()=>import('../../component/produtosHome/produtosHome'))
 
 
 function Main(){
@@ -37,24 +36,15 @@ function Main(){
         </div>
       </div>
       <br/><br/><br/>
-      <ProdutosHome />
+      <Suspense fallback={<p>carregando...</p>}>
+        <ProdutosHome />
+       </Suspense>
+      
       <br/><br/><br/><br/><br/>
-<div>
-
-<div>
-
-
-</div>
-
-
-
-</div>
-
       </div>
       <Pagamento />
       <Footer/>
 
-    
     </div>
 
   );

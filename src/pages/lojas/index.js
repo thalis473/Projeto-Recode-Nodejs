@@ -1,7 +1,10 @@
 import React from 'react';
+import {lazy, Suspense} from 'react';
 import Menu from '../../component/menu/menu';
 import Footer from '../../component/footer/footer';
-import Places from '../../component/places/places';
+
+//Code Splitting e Lazy Loading.
+const Places = lazy(()=>import('../../component/places/places'))
 
 function Lojas(){
     return(
@@ -18,7 +21,10 @@ function Lojas(){
             <h3> Encontre a loja mais proxima de você !</h3>
             <hr/>
             <br/><br/><br/><br/>
-            <Places />
+            <Suspense fallback={<p>Carregando...</p>}>
+                <Places />
+            </Suspense>
+            
             </section>
             <br/>
             <br/>
