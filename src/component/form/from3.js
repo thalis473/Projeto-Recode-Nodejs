@@ -24,8 +24,8 @@ const Comentarios= lazy(()=>import("../comentarios/comentarios"))
         
 // enviando pro back
       function envio (event){
-            event.preventDefault()
-            fetch('http://localhost:4000/api/recebimento',{
+            event.preventDefault() /*4000/api/recebimento*/
+            fetch('http://localhost:4444/feedback',{
                 method:"POST",
                 headers:{
                     "content-Type":"application/json"},
