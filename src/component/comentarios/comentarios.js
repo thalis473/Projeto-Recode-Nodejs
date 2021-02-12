@@ -13,7 +13,7 @@ class Comentarios extends React.Component{
     }            
     componentDidMount() {        
       
-        axios.get('http://localhost:4000/api/comentarios')
+        axios.get('http://localhost:4444/feedback') /*4000/api/comentarios Api em mysql*/
         .then( (resposta) => { 
                this.setState({comentarios:resposta.data} )
 
