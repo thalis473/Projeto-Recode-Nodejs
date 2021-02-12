@@ -26,7 +26,7 @@ class Products extends React.Component{
   };
         /*Didmount pois meu componente e uma class nao funcao*/    
     componentDidMount(){                    
-        axios.get('http://localhost:4000/api/produtos' )/*usei o axios para pushar do banco de dados meu produtos em objeto json*/
+        axios.get('http://localhost:4444/produtos' )/*4000/api/produtos rota em node*/
         .then( (resposta) => { 
               this.setState({dados:resposta.data} )
          })  
